@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	
+	<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRxhhGUb21qMRDoix2jLha1TYJ8lYDbs0kUM0Wx-xfLn5u2oyd_&usqp=CAU">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRxhhGUb21qMRDoix2jLha1TYJ8lYDbs0kUM0Wx-xfLn5u2oyd_&usqp=CAU" height="30" width="30" style="border-radius: 30px;">
+  <nav class="navbar-brand">Shop India</nav>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="products.php">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="help.php">Help</a>
+      </li>
+      <a href='logout.php' class='bt'>Logout<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_logOut-ltr.svg/600px-OOjs_UI_icon_logOut-ltr.svg.png' height='20px' width='20px'></a>
+             <style>
+                .bt{
+                 text-decoration:unset;
+                 margin:10px;
+                 font-size:17px;
+                 color:grey;
+
+            }
+            </style>
+    </ul>
+  </div>
+
+    <?php
+    session_start();
+   if( isset( $_SESSION['user'] ) ) {
+      echo "<h3>".$_SESSION['user']."</h3></ul><style>.bt{visibility:auto;}</style>";
+      if($_SESSION['gender']=="Male")
+      {
+        echo "<ul class='navbar-nav'>
+        <li><img src='https://upload.wikimedia.org/wikipedia/commons/1/19/Boss-icon.png' height='40px' width='40px'></li>";
+      }
+      else
+      {
+        echo "<ul class='navbar-nav'>
+        <li><img src='https://cdn1.iconfinder.com/data/icons/IconsLandVistaPeopleIconsDemo/256/Client_Female_Light.png' height='40px' width='40px'></li>";
+      }
+      
+      
+   }else {
+     echo "<ul class='navbar-nav'>
+     <li>
+              <a href='register.php'>Register</a>
+            </li>
+         </ul>
+      <pre> </pre>
+          <ul class='navbar-nav'>
+            <li>
+              <a href='login.php'>Login</a>
+            </li>
+          </ul>
+          <style>.bt{visibility:hidden;}</style>";
+   }
+    ?>
+
+</nav>
+
+<div class="text-center">
+<div class="upbottom">
+<h5>Contact Us @<img class="bimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRxhhGUb21qMRDoix2jLha1TYJ8lYDbs0kUM0Wx-xfLn5u2oyd_&usqp=CAU" style="height: 30px;width: 30px;">Shopindia.in</h5>
+</div>
+  <div class="bottom">
+<h5>In Association With</h5>
+<address><h5>Innovation Technologies Pvt Ltd</h5></address>
+</div>
+</div>
+
+<style>
+.body{
+transform: translate(-50%,-70%);
+position: absolute;
+	top:68%;
+	left:50%;
+}
+.bimg{
+	 border-radius:20px;
+ }
+.upbottom{
+	  color:white;
+	  margin-top:30px;
+	  width:100%;
+	  background-color:#004D40;
+	  height:50px;
+	  padding-top:10px;
+	  padding-right:10px;
+	  padding-left:10px;
+  }
+  .bottom{
+    width:100%;
+    background-color:#009688;
+
+	padding-top:10px;
+	color:white;
+	padding-right:10px;
+	  padding-left:10px;
+  }
+  .text-center{
+	  width:100%;
+	  position: absolute; 
+                bottom: 0px; 
+  }
+</style>
+</body>
+</html>
